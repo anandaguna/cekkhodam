@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .marquee {
+            width: 100%;
+            background-color: #ffc107;
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            overflow: hidden;
+            position: relative;
+        }
+        .marquee span {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="marquee">
+            <span>Selamat datang di website cek khodam, kalau ada rezeki lebih bisa bagi dikit lah hehehe</span>
+        </div>
+        <h1>Cek Khodam</h1>
+        <input type="text" id="nama" placeholder="Masukkan nama">
+        <button onclick="cekKhodam()">Cek Khodam</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const khodams = [
+            "Siluman tikus berkepala cheleng",
+            "Botol yakult",
+            "Taplak meja",
+            "Marmut",
+            "Karbu CB",
+            "Stang Mio",
+            "Solar busuk",
+            "Taring kucing",
+            "Batu akik",
+            "Pohon pisang",
+            "Banteng Merah",
+            "Kursi Kampus",
+            "bakwan gosong",
+            "ely peri mungil",
+            "roti asmara spikoe",
+            "mik gemoy pak tejo",
+            "bakso tanpa tepung",
+            "behel ica",
+            "knalpot",
+            "ular kepala macan",
+            "tuyul mullet",
+            "tikus six pax",
+            "batu nangka",
+            "lohan buncit",
+            "aspal make",
+            "krupuk udang",
+            "tisu magic",
+            "ular sepuh",
+            "Supra Bapak Geter",
+            "Kulit Pisang",
+            "Karung Goni"
+        ];
+
+        function cekKhodam() {
+            const nama = document.getElementById('nama').value;
+            const resultDiv = document.getElementById('result');
+            if (nama.trim() === '') {
+                resultDiv.innerHTML = '<p style="color: red;">Nama tidak boleh kosong!</p>';
+                return;
+            }
+
+            const randomKhodam = khodams[Math.floor(Math.random() * khodams.length)];
+            resultDiv.innerHTML = `<p>Halo ${nama}, khodam kamu adalah <strong>${randomKhodam}</strong>.</p>`;
+        }
+    </script>
+</body>
+</html>
