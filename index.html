@@ -68,6 +68,12 @@
             background: #e9ecef;
             border: 1px solid #ced4da;
             border-radius: 4px;
+            text-align: center;
+        }
+        .result img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -84,37 +90,37 @@
 
     <script>
         const khodams = [
-            "Siluman tikus berkepala cheleng",
-            "Botol yakult",
-            "Taplak meja",
-            "Marmut",
-            "Karbu CB",
-            "Stang Mio",
-            "Solar busuk",
-            "Taring kucing",
-            "Batu akik",
-            "Pohon pisang",
-            "Banteng Merah",
-            "Kursi Kampus",
-            "bakwan gosong",
-            "ely peri mungil",
-            "roti asmara spikoe",
-            "mik gemoy pak tejo",
-            "bakso tanpa tepung",
-            "behel ica",
-            "knalpot",
-            "ular kepala macan",
-            "tuyul mullet",
-            "tikus six pax",
-            "batu nangka",
-            "lohan buncit",
-            "aspal make",
-            "krupuk udang",
-            "tisu magic",
-            "ular sepuh",
-            "Supra Bapak Geter",
-            "Kulit Pisang",
-            "Karung Goni"
+            { name: "Pulu Pulu", img: "https://i.pinimg.com/originals/75/10/ef/7510ef956b831b21c66886e731efd6dc.jpg" },
+            { name: "Monyet Durian runtuh", img: "https://i.pinimg.com/originals/d5/2e/67/d52e67379404b1576fc60e4aa4eca61a.jpg" },
+            { name: "Harimau Kurang Gizi", img: "https://i.pinimg.com/originals/67/0d/7a/670d7a178676995671d6eb849c46ac0c.jpg" },
+            { name: "Khodam Kosong", img: "https://i.pinimg.com/originals/7a/42/50/7a425087052e3d2c2c67a942dea0133e.jpg" },
+            { name: "Macan kurang nutrisi", img: "https://i.pinimg.com/originals/6c/b4/5a/6cb45ae0fa17809cae67cc4c247845a3.jpg" },
+            { name: "Kung Ku Pandaa", img: "https://i.pinimg.com/originals/fd/af/85/fdaf851d4f64778a2a3007910ce82e4a.jpg" },
+            { name: "Pada Insomnia", img: "https://i.pinimg.com/originals/00/0a/5c/000a5ced83337a854c7c68b8328c3e08.jpg" },
+            { name: "Kambing Hengkerrr", img: "https://i.pinimg.com/originals/ff/ce/4c/ffce4cbc236b8cb1960d72d1c73037dc.jpg" },
+            { name: "Asu Sila", img: "https://thedailylama.net/wp-content/uploads/2013/11/meditating-dog-650x795.jpg" },
+            { name: "prikitiw", img: "https://i.pinimg.com/originals/d6/8d/83/d68d8300307ce7754df3530784735b72.jpg" },
+            { name: "kukuruyuk", img: "https://i.pinimg.com/originals/86/3c/7f/863c7fc6a11da4d703769ccc8cd0b796.jpg" },
+            { name: "Icikiwirr", img: "https://i.pinimg.com/originals/0f/86/6c/0f866ce4373f288aca970cae971891fc.jpg" },
+            { name: "junpei cepmek", img: "https://i.pinimg.com/originals/66/5e/03/665e03626d1bbcf52404493e56003bc1.jpg" },
+            { name: "kekeyi", img: "https://i.pinimg.com/originals/1f/be/e2/1fbee25bc62ad4a13b800d246eb9007d.jpg" },
+            { name: "Tikus Alaska", img: "https://i.pinimg.com/originals/d5/62/03/d5620318a9b7bb0728508d495519b67c.jpg" },
+            { name: "dev bingung mau kasi nama apa ", img: "https://i.pinimg.com/originals/3f/97/02/3f970231ae7d8f8fefd6eeb8a694bb15.jpg" },
+            { name: "aselole", img: "https://i.pinimg.com/originals/7d/50/b4/7d50b418a40b3987f7af2c3873666f8c.jpg" },
+            { name: "ucok flower", img: "https://i.pinimg.com/originals/e0/f0/f4/e0f0f4c14785cfe7279572339fdbe02a.jpg" },
+            { name: "knalpot", img: "url_gambar19.jpg" },
+            { name: "ular kepala macan", img: "https://i.pinimg.com/originals/ec/59/09/ec59098df76e4226bd0301dcdaedc303.jpg" },
+            { name: "tuyul mullet", img: "url_gambar21.jpg" },
+            { name: "tikus six pax", img: "url_gambar22.jpg" },
+            { name: "batu nangka", img: "url_gambar23.jpg" },
+            { name: "lohan buncit", img: "url_gambar24.jpg" },
+            { name: "aspal make", img: "url_gambar25.jpg" },
+            { name: "krupuk udang", img: "url_gambar26.jpg" },
+            { name: "tisu magic", img: "url_gambar27.jpg" },
+            { name: "ular sepuh", img: "url_gambar28.jpg" },
+            { name: "Supra Bapak Geter", img: "url_gambar29.jpg" },
+            { name: "Kulit Pisang", img: "url_gambar30.jpg" },
+            { name: "Karung Goni", img: "url_gambar31.jpg" }
         ];
 
         function cekKhodam() {
@@ -126,7 +132,7 @@
             }
 
             const randomKhodam = khodams[Math.floor(Math.random() * khodams.length)];
-            resultDiv.innerHTML = `<p>Halo ${nama}, khodam kamu adalah <strong>${randomKhodam}</strong>.</p>`;
+            resultDiv.innerHTML = `<p>Halo ${nama}, khodam kamu adalah <strong>${randomKhodam.name}</strong>.</p><img src="${randomKhodam.img}" alt="${randomKhodam.name}">`;
         }
     </script>
 </body>
